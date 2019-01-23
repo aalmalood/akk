@@ -1,0 +1,24 @@
+# creating new project
+django-admin startproject mysite
+
+# cd to directory
+python manage.py runserver
+
+#to start new app
+python manage.py startapp polls
+
+#to start database
+python manage.py makemigrations polls
+
+#create admin
+python manage.py createsuperuser
+
+
+
+git remote update origin https://github.com/aalmalood/my-first-blog.git
+
+pa_autoconfigure_django.py https://github.com/aalmalood/my-first-blog.git
+
+python manage.py createsuperuser
+https://tutorial.djangogirls.org/en/deploy/
+https://www.pythonanywhere.com/user/aalmalood/webapps/#tab_id_aalmalood_pythonanywhere_com

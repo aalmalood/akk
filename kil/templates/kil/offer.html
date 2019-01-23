@@ -1,0 +1,66 @@
+{% load static %}
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'kil/style.css' %}">
+
+  <title>AKK project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
+    {% for ag in Agency_list %}
+        
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ag.name}}
+       <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+      		{% for of in of_list %}
+    			{% if of.agency == ag.name %}
+        			<li><a href="/offer/{{ of.id }}/">{{ of.title }}</a></li>
+    			{% endif %}
+       	
+    		{% endfor %}
+    		
+        		
+    		
+       	
+   		 
+        
+        </ul>
+    {% endfor %}                  
+      
+    </li>
+    
+  </ul>
+<div class="container">
+<h1>{{ off.title }}</h1>
+
+<img src="/static/kil/offer/{{off.id}}.png" alt="{{off.title}}">
+
+<table class="table table-striped">
+    
+    	
+        <tr><td>عنوان الرحلة :</td><td> {{ off.title }}</td></tr>
+        {% load static %}
+		
+    	<tr><td>الوجهة  :</td><td> {{ off.dest }}</td></tr>
+    	<tr><td>تفاصيل  : </td><td> {{ off.desc }}</td></tr>
+    	<tr><td>شركة السفريات  :  </td><td>{{ off.agency }}</td></tr>
+       	
+    
+    </table>
+        
+<input class="btn" type="button" name="request" value="request">
+ 	
+<form action="/reqForm/" id="reqForm" name="reqForm" method="post">
+    <label for="your_name">Your name: </label>
+    <input id="nppl" type="text" name="nppl" value="{{ current_name }}">
+    <input type="submit" value="OK">
+</form>
+</div>
+</body>

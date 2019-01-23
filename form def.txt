@@ -1,0 +1,34 @@
+ """def requestt(request,of.id):
+ 	try:
+        off = Offers.objects.get(pk=of_id)
+    except Offers.DoesNotExist:
+        raise Http404("Offer does not exist")
+    context ={
+    	'off': off,
+    }
+    return render(request, 'kil/requestt.html', context)"""
+
+
+
+
+
+
+ def requestt(self ,request): 	
+    form = reqForm(request,POST)
+    if form.is_valid():
+    	form.save()
+    context ={
+    	'off': off,
+    }
+    return render(request, self.template_name , arg)
+
+
+from django import forms
+from .models import Customer
+
+class reqForm(forms.modelForm):
+	nppl = forms.CharField()
+
+	class meta:
+		model = Customer
+		fields = ('post',)

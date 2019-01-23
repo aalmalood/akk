@@ -1,0 +1,20 @@
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'kil/style.css' %}">
+<h1>{{ off.title }}</h1>
+
+
+<ul>
+    {% for of in of_list %}
+    	
+        <li>{{ of.title }}</li>
+    	<li>{{ of.dest }}</li>
+    	<li>{{ of.desc }}</li>
+    	<li>{{ of.agency }}</li>
+       	
+    {% endfor %}
+    </ul>
+        
+ 	
+
