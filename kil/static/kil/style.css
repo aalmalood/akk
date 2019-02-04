@@ -9,3 +9,13 @@ h1 {
 a{
 	color: red;
 }
+
+#h{
+	color: black;
+	background-color: #ff5050;
+}
+
+.h{
+	color: white;
+	background-color: #ff5050;
+}

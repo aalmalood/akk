@@ -56,19 +56,22 @@
 	
 </div>
 -->
-{% for ag in Agency_list %}
+
 <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class=" center center-block label label-primary">
-        <h4 class=" label label-primary ">
-          <a class="label label-primary" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ag.id}}"><h1>{{ag.name}}</h1> </a>
+
+    <div class="panel panel-warning  ">
+      {% for ag in Agency_list %}
+      <div class="panel-heading  id="h">
+        <h4 class="panel-title  ">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse{{ag.id}}"><h1>{{ag.name}}</h1> </a>
         </h4>
       </div>
-      <div id="collapse{{ag.id}}" class="panel-collapse collapse">
-        <div class="panel-body">
-         <table>
-          {% for of in of_list %}
+      {% for of in of_list %}
           {% if of.agency == ag.name %}
+      <div id="collapse{{ag.id}}"  class="panel-collapse collapse ">
+        <div class="panel-body">
+         <table class="table">
+          
             <tr>
               <td>
                 <a href="/offer/{{ of.id }}/"><img  src="/static/kil/offer/{{of.id}}.png"></a>
@@ -77,8 +80,8 @@
                 <table class="table table-striped">
     
       
-        <tr><td>عنوان الرحلة :</td><td> {{ of.title }}</td></tr>
-      <tr><td>تفاصيل  : </td><td> {{ of.desc }}</td></tr>
+        <tr><td>عنوان الرحلة </td><td> {{ of.title }}</td></tr>
+      <tr><td>تفاصيل  </td><td> {{ of.desc }}</td></tr>
       
         
     
@@ -92,9 +95,9 @@
         </div>
       </div>
       
-      
+       {% endfor %}
     </div>
-    {% endfor %}
+   
   </div>
 
 
